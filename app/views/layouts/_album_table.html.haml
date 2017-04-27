@@ -1,0 +1,22 @@
+- model_class = Album
+/ %table.table.table-striped
+/   %thead
+/     %tr
+/       %th= "Nombre"
+/       %th= "Artista"
+/   %tbody
+/     - albums.each do |album|
+/       %tr
+/         %td= link_to album.name, album
+/         %td= album.artist
+.gallery_index
+  - albums.each do |album|
+    / %li.album
+    /   .box.album
+    .col-md-4
+      = link_to image_tag(album.cover.url(:thumb), :class => 'cover'), album_path(album)
+    / %h3= album.name
+    / %p
+    /   %strong= link_to "Ver más", album_path(album)
+
+= will_paginate albums

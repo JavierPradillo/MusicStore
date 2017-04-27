@@ -1,0 +1,5 @@
+- model_class = Album
+.page-header
+  %br= link_to_add_mini(new_album_path)
+
+= render partial: 'layouts/album_table', locals: {albums: @albums}

@@ -1,0 +1,13 @@
+- model_class = Album
+.page-header
+  %h1= "Géneros musicales"
+  %br= link_to_add_mini(new_album_path)
+
+%table.table.table-striped
+  %thead
+    %tr
+      %th= "Nombre"
+  %tbody
+    - @genres.each do |genre|
+      %tr
+        %td= link_to genre.name, genre

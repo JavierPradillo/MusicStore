@@ -1,0 +1,21 @@
+= simple_form_for @album, :html => { :class => 'form' } do |f|
+  = f.error_notification
+
+  .form-inputs
+    .row
+      .col-md-3= f.input :name
+      .col-md-3= f.input :artist
+      .col-md-3= f.association :genre
+    .row  
+      .col-md-3= f.input :year
+      .col-md-3= f.input :description
+      .col-md-3= f.input :price
+      .col-md-3
+        = f.label :cover
+        = f.file_field :cover
+
+  .form-actions
+    - unless @album.new_record?
+      .pull-right
+        = link_to_delete_mini album_path(@album)
+    = f.button :submit, :class => 'btn-primary btn-xs', disable_with: "Procesando"

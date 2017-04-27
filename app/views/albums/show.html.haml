@@ -1,0 +1,13 @@
+- model_class = Album
+.page-header
+  %h1= @album.name
+  = link_to_back_mini albums_path
+  = link_to_edit_mini edit_album_path
+  .pull-right= link_to_delete_mini @album
+
+.col-md-4
+  %br
+  %a{"data-lightbox" => @album.name, :href => @album.cover.url, "data-title" => @album.name, :class => 'zoom'}
+    = image_tag @album.cover.url(:thumb), :class => 'frame'
+
+.col-md-8
