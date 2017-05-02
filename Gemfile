@@ -59,8 +59,11 @@ gem 'simple-navigation-bootstrap'
 # Form helpers
 gem 'simple_form'
 
-# Pagination
+# Sorting and pagination
 gem 'will_paginate', '~> 3.1.0'
+gem 'jquery-datatables-rails', '~> 3.4.0'
 
 # Image attachment
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+
+# Shopping cart
