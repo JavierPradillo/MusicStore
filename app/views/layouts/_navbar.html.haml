@@ -1,0 +1,12 @@
+%nav.navbar.navbar-default
+  #navigation-header.container-fluid
+    .navbar-header
+      %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+    .brand
+      = link_to image_tag('logo.png', title: 'MusicStore', alt: 'MusicStore logo', height: "200"), :id => 'home', :class => "navbar-brand"
+    .collapse.navbar-collapse
+      = render_navigation expand_all: true, renderer: :bootstrap
