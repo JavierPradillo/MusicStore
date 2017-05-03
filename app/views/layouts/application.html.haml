@@ -11,7 +11,16 @@
     = render partial: 'layouts/navbar'
     
     .container
-      = yield
+      .row
+        .col-lg-12
+          /[if lt IE 9]
+            .alert.fade.in.alert-error
+              = t('alerts.internet_explorer_warning')
+              %br
+              = t('alerts.internet_explorer_help')
+
+          = bootstrap_flash
+          = yield
 
     = render partial: 'layouts/footer'
 

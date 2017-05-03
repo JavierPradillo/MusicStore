@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170427083719) do
+ActiveRecord::Schema.define(version: 20170503090641) do
 
   create_table "albums", force: :cascade do |t|
     t.string   "name"
@@ -28,10 +28,25 @@ ActiveRecord::Schema.define(version: 20170427083719) do
     t.index ["genre_id"], name: "index_albums_on_genre_id"
   end
 
+  create_table "carts", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "genres", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "purchases", force: :cascade do |t|
+    t.integer  "album_id"
+    t.integer  "cart_id"
+    t.integer  "quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["album_id"], name: "index_purchases_on_album_id"
+    t.index ["cart_id"], name: "index_purchases_on_cart_id"
   end
 
 end

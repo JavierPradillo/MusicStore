@@ -7,6 +7,6 @@
         %span.icon-bar
         %span.icon-bar
     .brand
-      = link_to image_tag('logo.png', title: 'MusicStore', alt: 'MusicStore logo', height: "200"), :id => 'home', :class => "navbar-brand"
+      = link_to image_tag('logo.png', title: 'MusicStore', alt: 'MusicStore logo', height: "100"), albums_path, :id => 'home', :class => "navbar-brand"
     .collapse.navbar-collapse
       = render_navigation expand_all: true, renderer: :bootstrap

@@ -1,0 +1,25 @@
+ 
+= wicked_pdf_stylesheet_link_tag "style.css"
+= wicked_pdf_stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
+= wicked_pdf_javascript_include_tag "application", "data-turbolinks-track" => true
+.page-header
+
+  .well
+    .brand
+      = image_tag('http://themusicstore.com.ar/wp-content/uploads/2016/07/the-music-store-argentina-logo-2.png', title: 'MusicStore', alt: 'MusicStore logo', height: "100")
+      %h3.pull-right= "Factura"
+    %br
+
+%table.table.table-striped
+  %thead
+    %tr
+      %th= "Album"
+      %th= "Precio"
+  %tbody
+    - @purchases.each do |purchase|
+      %tr
+        %td= purchase.album.name 
+        %td= purchase.album.price
+    %tr
+      %td= "Total"
+      %td= @cart.total

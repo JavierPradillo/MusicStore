@@ -55,8 +55,8 @@ SimpleNavigation::Configuration.run do |navigation|
     #
     # primary.item :key_1, 'name', url, options
     primary.item :home,   'Home',   albums_path
-    primary.item :genres, 'Genres', genres_path
-
+    primary.item :genres, 'Categorías', genres_path
+    primary.item :carts,  'Carro',  carts_path
     # # Add an item which has a sub navigation (same params, but with block)
     # primary.item :key_2, 'name', url, options do |sub_nav|
     #   # Add an item to the sub navigation (same params again)
@@ -72,6 +72,7 @@ SimpleNavigation::Configuration.run do |navigation|
     # you can also specify html attributes to attach to this particular level
     # works for all levels of the menu
     # primary.dom_attributes = {id: 'menu-id', class: 'menu-class'}
+    primary.dom_class = 'nav navbar-nav pull-right'
 
     # You can turn off auto highlighting for a specific level
     # primary.auto_highlight = false

@@ -7,10 +7,12 @@
 
 .well.row
   .col-md-4
-    %br
-    %a{"data-lightbox" => @album.name, :href => @album.cover.url, "data-title" => @album.name, :class => 'zoom'}
-      = image_tag @album.cover.url(:thumb), :class => 'frame'
-
+    .row
+      %br
+      %a{"data-lightbox" => @album.name, :href => @album.cover.url, "data-title" => @album.name, :class => 'zoom'}
+        = image_tag @album.cover.url(:thumb), :class => 'frame'
+    .row  
+      = link_to_add_to_cart_mini add_to_cart_album_path 
   .col-md-8
     %h3= @album.name
     %h4= @album.artist + ', ' + @album.year

@@ -66,4 +66,6 @@ gem 'jquery-datatables-rails', '~> 3.4.0'
 # Image attachment
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 
-# Shopping cart
+# Pdf printing
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'

@@ -1,5 +1,7 @@
 class Album < ApplicationRecord
   belongs_to :genre
+  has_many :purchases
+  has_many :carts, through: :purchases
 
   has_attached_file :cover, styles: { thumb: "250x250>" }, default_url: "/images/:style/missing.png", dependent: :destroy
   

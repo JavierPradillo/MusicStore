@@ -45,6 +45,17 @@ class AlbumsController < ApplicationController
     redirect_to :action => 'index'
   end
 
+  def add_to_cart
+    if Cart.first.present?
+      @cart = Cart.first
+    else
+      @cart = Cart.create
+    end
+    @album = Album.find(params[:id])
+    @cart.albums << @album
+    redirect_to(@album, notice: "Se ha añadido al carro")
+  end
+
   def album_param
     params.require(:album).permit(:name, :artist, :year, :description, :price, :genre_id, :cover)
   end

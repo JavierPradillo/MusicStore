@@ -7,3 +7,4 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 genres = Genre.create([{ name:'Metal' }, { name:'Rock' }, { name:'Folk' }, { name:'Classical' }])
+cart   =  Cart.create

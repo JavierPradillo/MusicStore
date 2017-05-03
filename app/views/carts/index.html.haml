@@ -1,0 +1,23 @@
+- model_class = Album
+.page-header
+  %h1= "Carro de la compra"
+  %br
+  = link_to_checkout_mini checkout_carts_path
+  .pull-right= link_to_empty_cart_mini empty_carts_path
+
+%table.table.table-striped
+  %thead
+    %tr
+      %th= "Artículo"
+      %th= "Precio"
+      %th
+  %tbody
+    - @purchases.each do |purchase|
+      %tr
+        %td= link_to purchase.album.name, purchase.album 
+        %td= purchase.album.price
+        %td= link_to_delete_mini purchase
+    %tr
+      %td= "Total"
+      %td= @cart.total
+      %td
